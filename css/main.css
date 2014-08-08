@@ -1,0 +1,761 @@
+/* 
+
+*/
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+
+body, html {
+	height: 100%;
+	min-height: 100%;
+}
+body {
+	
+}
+.no-js {
+	padding-top: 106px;
+}
+h2 {
+	margin-top: 0;
+}
+.loading {
+	background: url('../img/ico_loading.gif') no-repeat center center;
+}
+section {
+	min-width: 960px;
+	opacity: 0;
+}
+.loaded section,
+.no-js section {
+	opacity: 1;
+	-webkit-transition: opacity 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out;
+	transition: opacity 300ms ease-out;
+}
+main {
+	overflow-x: hidden;
+}
+#preload {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.bcg {
+    background-color: #73FF73;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+.hsContainer {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.hsContent {
+    font-family: sans-serif;
+    /*font-size: 18px;*/
+	max-width: 100%;
+}
+
+/* Grid System */
+
+    /* Header row */
+    #hrow {
+        margin-top: 20px;
+    }
+
+    #hrow div div{
+        width: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Center row */
+    #crow h2 {
+    text-align: center;
+    font-family: serif;
+    }
+
+    #frow {
+        margin-top: 20px;
+    }
+
+    #crow {
+        margin-bottom: 0;
+    }
+
+/*End Grid System*/
+
+/* UI Kit */
+
+.social_icons {
+    position: absolute;
+    left: 2%;
+    top: 36%;
+    display: block;
+    width: 20%;
+
+}
+
+.social_icons img {
+    transition: all 0.5s ease-in-out;
+}
+
+.social_icons img:hover {
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.social_icons li:nth-child(odd) img:hover {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+
+.social_icons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social_icons ul li {
+    margin-bottom: 5px;
+}
+
+.social_icons ul img {
+    width: 40px;
+    height: 40px;
+}
+
+.tabs {
+    /*margin: 20px 0;*/
+    margin: 5% 0;
+}
+
+.tabs label {
+    position: relative;
+    padding: 15px;
+    color: #555;
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    border-right: 1px inset #30BFBF;
+    -webkit-transition: top 1s ease-out 0.2s;
+    font-family: font_3;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.tabs label:hover {
+}
+
+.tabs input {
+    position: absolute;
+    left: -9999px;
+}
+
+
+#mission_tab  ~ #l_mission_tab,
+#about_tab  ~ #l_about_tab,
+#friends_tab  ~ #l_friends_tab,
+#results_tab ~ #l_results_tab {
+    background: #00A6A6;
+    color: #fff;
+    /*border-color: #fff;*/
+    z-index: 3;
+}
+
+#mission_tab:checked  ~ #l_mission_tab,
+#about_tab:checked  ~ #l_about_tab,
+#friends_tab:checked  ~ #l_friends_tab,
+#results_tab:checked ~ #l_results_tab {
+    background: #30BFBF;
+}
+
+.tabs_cont {
+    background: #30BFBF;
+    position: relative;
+    z-index: 99;
+    border: 1px solid transparent;
+    border-radius: 0 10px 10px 10px;
+    padding: 0 20px;
+    /*height: 850px;*/
+    /*border-radius: 5px;*/
+}
+
+.tabs_cont > div {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    opacity: 0;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+
+#mission_tab:checked  ~ .tabs_cont #c_mission_tab,
+#about_tab:checked  ~ .tabs_cont #c_about_tab,
+#friends_tab:checked  ~ .tabs_cont #c_friends_tab,
+#results_tab:checked ~ .tabs_cont #c_results_tab {
+    position: static;
+    left: 0;
+    opacity: 1;
+}
+
+#c_friends_tab ul {
+    /*float: left;*/
+    list-style: none;
+}
+
+#c_friends_tab ul li {
+    margin-bottom: 20px;
+    /*height: 10%;*/
+}
+
+#c_friends_tab table {
+    margin: 50px auto;
+}
+
+#c_friends_tab table td {
+}
+
+#c_friends_tab img {
+    position: relative;
+    top: 0;
+    width: 200px;
+    height: 130px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-transition: top 1s ease-out 0.2s;
+}
+
+#c_friends_tab img:hover {
+    top: 20px;
+}
+
+#c_results_tab {
+    text-align: center;
+}
+
+/* Navigation */
+
+.round-button {
+    display:block;
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+}
+
+.menu-item {
+    text-align: center;
+    color:#ffffff;
+    background: #157B3C;
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: font_3;
+    transition: all 1s ease;
+}
+
+.menu-item:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+#slideNav {
+    display: table;
+    z-index: 10;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#slideNav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#slideNav ul li {
+    float: left;
+    list-style: none;
+    margin-right: 1em;
+}
+
+#slideNav ul li:last-child {
+    margin: 0;
+}
+
+.vSlideNavCentered {
+    position: absolute;
+    left: 1%;
+    z-index: 2;
+}
+
+#vSlideNav {
+    position: absolute;
+    left: 1%;
+    z-index: 2;
+}
+
+#vSlideNav #slideNavMain {
+    margin-top: 0;
+}
+
+#vSlideNav ul {
+    padding: 0;
+    margin: 40% 0 0 0;
+}
+
+#vSlideNav ul li{
+    float: none;
+    list-style: none;
+}
+
+#vSlideNav span {
+    margin-bottom: 10px;
+}
+
+/* Text */
+
+    /*Fonts*/
+
+@font-face {
+    font-family: font_1;
+    src: url('../fonts/font_1.ttf');
+}
+
+@font-face {
+    font-family: font_2;
+    src: url('../fonts/font_2.ttf');
+}
+
+@font-face {
+    font-family: font_3;
+    src: url('../fonts/font_3.otf');
+}
+
+@font-face {
+    font-family: font_4;
+    src: url('../fonts/font_4.otf');
+}
+
+.kalilaska {
+    font-family: font_3;
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Page title */
+#slide-0 .hsContent h2 {
+    margin:0 auto;
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+}
+
+.pageTitle {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    font-family: font_3;
+    text-align: center;
+    font-size: 30px;
+}
+
+.homeSlide {
+    border-top: 1px solid green;
+}
+
+/* Slide 0 */ 
+
+#slide-0 .bcg {
+
+}
+
+#kalilaskaLogo {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 1s ease-out;
+}
+
+#kalilaskaLogo:hover {
+    /*Transform*/
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+#slide-0 .hsContent {
+    max-width: 100%;
+    top: 0%;
+    left: 0%;
+    font-family: font_3;
+    font-weight: bolder;
+    font-size: 23px;
+}
+
+/* Slide 1 */
+#slide-1 .bcg {
+}
+
+#slide-1 .hsContent {
+	max-width: 100%;
+
+}
+
+/* Slide 2 */
+#slide-2 .bcg {
+
+}
+#slide-2 .hsContent {
+    max-width: 100%;
+}
+
+/* Staff table */
+
+#slide-2 table {
+    margin: 0 auto;
+}
+
+#slide-2 table h4 {
+    text-align: center;
+}
+
+/* Events */
+#slide-3 .bcg {
+    background: url('../img/patterns/asteroids.jpg');
+
+}
+#slide-3 .hsContent {
+    max-width: 100%;
+    color: #FFF;
+}
+
+.posts {
+
+}
+
+.post {
+
+}
+
+.post-title {
+    margin: 0;
+    padding: 18px;
+} 
+
+.post-date {
+    float: left;
+    margin: 0;
+    margin-right: 10px;
+    padding: 5px;
+    color: #FFF;
+    background-color:  #4FF19F;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.post-date span {
+    display: block;
+    font-weight: bold;
+}
+
+.post-content {
+    clear: both;
+}
+
+/* Footer */
+
+#footer {
+    padding: 20px 0;
+    font-size: 12px;
+    background-color: #6FA600;
+    /*text-align: center;*/
+}
+
+#footer .columns {
+    margin: 0;
+}
+
+#footer ul {
+    margin: 0;
+    list-style: none;
+}
+
+#footer ul li {
+    float: left;
+    margin-left: 2px;
+}
+
+#footer dd img {
+    width: 20px;
+    height: 20px;
+}
+
+#footer .columns:nth-child(1) dl {
+    float: right;
+}
+
+#footer .columns dd {
+    margin: 0 0 5px 0;
+}
+
+#footer .columns {
+    /*border-top: 1px solid;*/
+    /*margin: 0 5px;*/
+    padding: 0 9px;
+}
+
+#footer .columns:nth-child(1) {
+    /*margin: 0;*/
+    border-right: 1px solid;
+    /*padding-right: 18px;*/
+}
+
+#footer .sixteen {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#footer .kalilaska {
+    font-size: 12px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
